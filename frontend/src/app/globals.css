@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background-color: #f7f9fc;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  font-weight: 600;
+  color: #0069d9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.chatContainer {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile-icon-btn:hover {
+  color: white;
+  background-color:rgb(25 135 84);
+  border-color: #28a745;
+}
