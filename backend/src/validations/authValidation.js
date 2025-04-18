@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-// Signup schema
+ 
 const signupSchema = Joi.object({
   username: Joi.string().min(3).max(30).required(),
   email: Joi.string().email().required(),
@@ -10,7 +10,7 @@ const signupSchema = Joi.object({
   }),
 });
 
-// Login schema
+ 
 const loginSchema = Joi.object({
   email: Joi.string().email().required(),
   password: Joi.string().required(),

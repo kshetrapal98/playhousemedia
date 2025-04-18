@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const { generateToken } = require('../utils/jwtUtils');
 const { signupSchema, loginSchema } = require('../validations/authValidation');
 
-// ✅ SIGNUP
+ 
 exports.signup = async (req, res) => {
   try {
     const { error, value } = signupSchema.validate(req.body, { abortEarly: false });
@@ -42,7 +42,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-// ✅ LOGIN
+ 
 exports.login = async (req, res) => {
   try {
     const { error, value } = loginSchema.validate(req.body, { abortEarly: false });

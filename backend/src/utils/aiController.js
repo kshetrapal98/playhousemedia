@@ -1,7 +1,7 @@
 exports.generateAIResponse = (userMessage) => {
   const msg = userMessage.toLowerCase();
 
-  // Greetings
+  
   if (["hi", "hello", "hey", "yo", "what's up"].some(p => msg.includes(p))) {
     return "Hey there! How can I assist you today?";
   }
@@ -11,12 +11,12 @@ exports.generateAIResponse = (userMessage) => {
   if (msg.includes("good evening")) return "Good evening! How was your day?";
   if (msg.includes("good afternoon")) return "Good afternoon! How can I help you?";
 
-  // Farewells
+   
   if (["bye", "goodbye", "see you", "later", "cya"].some(p => msg.includes(p))) {
     return "Goodbye! Chat with you soon!";
   }
 
-  // Mood & Personal
+  
   if (msg.includes("how are you")) return "I'm all code, but I'm doing great! How about you?";
   if (msg.includes("i'm fine") || msg.includes("i am fine")) return "Glad to hear that!";
   if (msg.includes("i'm not okay") || msg.includes("sad") || msg.includes("depressed")) {
@@ -25,24 +25,24 @@ exports.generateAIResponse = (userMessage) => {
   if (msg.includes("bored")) return "Let’s find something fun to do! Want a joke or a fun fact?";
   if (msg.includes("i'm happy") || msg.includes("feeling good")) return "That's awesome to hear! Keep smiling 😊";
 
-  // Identity
+ 
   if (msg.includes("what is your name") || msg.includes("who are you")) {
     return "I'm your AI companion – built to chat, help, and make your day better!";
   }
 
-  // Time & Date
+ 
   if (msg.includes("time")) return `It's currently ${new Date().toLocaleTimeString()}.`;
   if (msg.includes("date")) return `Today is ${new Date().toLocaleDateString()}.`;
 
-  // Thank you
+ 
   if (msg.includes("thanks") || msg.includes("thank you")) return "You're welcome! 😊";
   if (msg.includes("appreciate")) return "I appreciate you too!";
 
-  // Help
+  
   if (msg.includes("help") || msg.includes("support")) return "I'm here to help! Try saying 'menu' to see options.";
   if (msg.includes("menu")) return "📋 Menu: ask about time, date, jokes, fun facts, or say 'game' to play something simple.";
 
-  // Jokes
+   
   if (msg.includes("joke")) {
     const jokes = [
       "Why did the scarecrow win an award? Because he was outstanding in his field!",
@@ -54,7 +54,7 @@ exports.generateAIResponse = (userMessage) => {
     return jokes[Math.floor(Math.random() * jokes.length)];
   }
 
-  // Fun Facts
+  
   if (msg.includes("fact")) {
     const facts = [
       "Octopuses have three hearts!",
@@ -66,20 +66,20 @@ exports.generateAIResponse = (userMessage) => {
     return facts[Math.floor(Math.random() * facts.length)];
   }
 
-  // Simple Games
+  
   if (msg.includes("game")) return "Let's play! Try saying 'rock paper scissors' or 'guess a number'!";
   if (msg.includes("rock paper scissors")) return "Rock 🪨... Paper 📄... Scissors ✂️... I choose Rock! What about you?";
   if (msg.includes("guess a number")) return "Okay! I'm thinking of a number between 1 and 10. Try to guess!";
 
-  // Preferences
+ 
   if (msg.includes("what do you like") || msg.includes("what’s your favorite")) {
     return "I like helping people and never crash. That's my thing!";
   }
 
-  // Weather-related (mocked)
+ 
   if (msg.includes("weather")) return "I'm not connected to a weather API yet, but it's always sunny in here 🌞";
 
-  // AI/Tech related
+   
   if (msg.includes("are you real") || msg.includes("are you human")) {
     return "I'm real in code, but not human. Still, I’m happy to be here with you!";
   }

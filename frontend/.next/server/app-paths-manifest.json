@@ -1,8 +1,5 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/chatWithAI/page": "app/chatWithAI/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/forgotPassword/page": "app/forgotPassword/page.js",
-  "/page": "app/page.js",
-  "/reset-password/[token]/page": "app/reset-password/[token]/page.js"
+  "/page": "app/page.js"
 }

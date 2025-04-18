@@ -6,13 +6,13 @@ const { verifyToken } = require('../utils/jwtUtils');
 const handleSocketConnection = (io, socket) => {
   console.log("A user connected:", socket.id);
 
-  // 1. Get token from socket handshake
+  
   const token = socket.handshake.auth?.token;
   let userId = null;
 
   if (token) {
     try {
-      const decoded = verifyToken(token); // Uses your utils
+      const decoded = verifyToken(token);  
       userId = decoded.userId;
       console.log("🔐 Authenticated user:", userId);
     } catch (err) {
@@ -26,7 +26,7 @@ const handleSocketConnection = (io, socket) => {
     return;
   }
 
-  // 2. Load only user's messages
+   
   socket.on('load history', async () => {
     try {
       const history = await Message.find({ userId }).sort({ timestamp: 1 }).lean();
@@ -36,7 +36,7 @@ const handleSocketConnection = (io, socket) => {
     }
   });
 
-  // 3. Save both user and bot messages with userId
+   
   socket.on('chat message', async (text) => {
     try {
       const userMessage = await Message.create({ sender: 'user', text, userId });
@@ -52,11 +52,11 @@ const handleSocketConnection = (io, socket) => {
       console.error('Message handling error:', err);
     }
   });
-  // inside handleSocketConnection
+  
 socket.on('clear chat', async () => {
   try {
     await Message.deleteMany({ userId });
-    socket.emit('chat cleared'); // Notify frontend that chat was cleared
+    socket.emit('chat cleared');  
   } catch (err) {
     console.error('Failed to clear chat:', err);
     socket.emit('error', 'Failed to clear chat');
